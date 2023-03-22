@@ -1,6 +1,11 @@
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
-from typing import Any, Iterable, List, Literal, Optional, Type, TypeVar, Union
+from typing import Any, Iterable, List, Optional, Type, TypeVar, Union
+try:
+    from typing import Literal
+except ImportError:
+    from typing_extensions import Literal
+
 from urllib.parse import urlsplit
 
 from pydantic.networks import HttpUrl
